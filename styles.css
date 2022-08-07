@@ -9,6 +9,7 @@
 a {
   color: #5624d0;
   text-decoration: none;
+  font-family: sans-serif;
 }
 a:hover {
   color: #5624d0;
@@ -22,8 +23,12 @@ a:hover {
 }
 .row {
   display: flex;
-  background-color: #f8f8fb;
+  flex-wrap: wrap;
   margin: 0.2rem 0 0 0;
+}
+
+.g-background {
+  background-color: #f8f8fb;
 }
 ul {
   list-style: none;
@@ -212,15 +217,70 @@ courses
 .courses ul li {
   margin-right: 0.4rem;
 }
-.courses ul li {
+.courses ul li a {
+  font-size: .7rem;
   color: #6a6f73;
 }
+.courses ul li a span {
+  color: #000;
+}
 .courses-explore {
-  border: 1px;
+  margin: 1rem 0;
+  border: 1px solid #000;
+  padding: 1rem;
+}
+.courses-explore h3 {
+  padding: 1rem 0;
+}
+.courses-explore p {
+  max-width: 40rem;
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+.courses-explore .course {
+  width: 20%;
+  padding: 0.3rem;
+  margin: 1rem 0;
+  font-family: sans-serif;
+}
+.courses-explore .course .card-title h3 a {
+  color: black;
+  font-size: 0.8rem;
+}
+.courses-explore .course .card-title-xs p {
+  color: #6a6f73;
+  font-size: 0.5rem;
+}
+.courses-explore .course div {
+  margin: 0.1rem 0;
+}
+.courses-explore .course .card-rating span {
+  font-weight: 700;
+}
+.courses-explore .course .card-rating span:first-child {
+  color: #b4690e;
+  font-size: 0.8rem;
+}
+.courses-explore .course .card-rating span:not(:first-child):not(:last-child) {
+  color: #ff9c1e;
+  font-size: 0.5rem;
+}
+.courses-explore .course .card-rating span:last-child {
+  color: #6a6f73;
+  font-size: 0.5rem;
+}
+.btn-explore {
+  margin: 3rem 0 1rem;
+}
+.btn-explore a {
+  padding: 1rem;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: 800;
 }
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 1200px;
   }
   .col-md-6 {
     width: 50%;
