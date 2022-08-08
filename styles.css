@@ -91,10 +91,10 @@ header .top-header .remove-text {
     Header Nav
 */
 header nav {
+  padding: 0.5rem;
   align-items: center;
   display: flex;
   background: #fff;
-  padding: 0 2.4rem;
   position: relative;
   z-index: 1010;
 }
