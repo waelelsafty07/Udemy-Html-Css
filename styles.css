@@ -261,6 +261,9 @@ courses
   font-size: 1rem;
   color: #6a6f73;
 }
+.courses ul li a:hover {
+  color: #000;
+}
 .courses ul li a span {
   color: #000;
 }
@@ -294,6 +297,16 @@ courses
 .courses-explore .course div {
   margin: 0.1rem 0;
 }
+.courses-explore .course h4 {
+  display: block !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.04rem;
+}
+
 .courses-explore .course .card-rating span {
   font-weight: 700;
 }
@@ -308,6 +321,9 @@ courses
 .courses-explore .course .card-rating span:last-child {
   color: #6a6f73;
   font-size: 0.5rem;
+}
+.card-price span {
+  font-weight: bold;
 }
 .btn-explore {
   margin: 3rem 0 1rem;
@@ -431,7 +447,7 @@ courses
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .course {
-    width: 25%;
+    width: 20%;
   }
   .container {
     max-width: 1140px;
