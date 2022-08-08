@@ -23,10 +23,13 @@ a:hover {
 }
 .row {
   display: flex;
-  flex-wrap: wrap;
+
   margin: 0.2rem 0 0 0;
 }
 
+.row-wrap {
+  flex-wrap: wrap;
+}
 .g-background {
   background-color: #f8f8fb;
 }
@@ -108,14 +111,11 @@ header nav a img {
 
 header nav .search-bar {
   flex-grow: 1;
-  height: 2.4rem;
+  height: 3.4rem;
   border: 1px solid #1c1d1f;
   border-radius: 9999px;
   background-color: #f7f9fa;
-  margin: 0 1.2rem;
   position: relative;
-  min-width: 18rem;
-  max-width: none;
 }
 header nav .search-bar .search-form {
   flex-direction: row-reverse;
@@ -129,7 +129,10 @@ header nav .search-bar .search-label {
   align-items: center;
   margin: 0 0 0 3.2rem;
   padding-bottom: 0.8rem;
-  min-height: 3rem;
+  min-height: 4rem;
+  color: #5c5b5b;
+  font-family: sans-serif;
+  font-size: 0.7rem;
   position: absolute !important;
   overflow: hidden;
 }
@@ -140,7 +143,7 @@ header nav .search-bar .search-input {
   padding: 0 0 0 0.4rem;
   flex: 1;
   border: 0;
-  height: 2.4rem;
+  height: 3.4rem;
   border-radius: 0;
   -webkit-appearance: none;
   display: block;
@@ -174,12 +177,12 @@ header nav .search-bar .btn {
 header nav .login {
   color: #000;
   border: 2px solid #000;
-  padding: 0.5rem;
+  padding: 0.5rem 0.3rem;
   font-weight: 900;
 }
 header nav .signup {
   background-color: #000;
-  padding: 0.6rem;
+  padding: 0.6rem 0.3rem;
   color: white;
   font-weight: 900;
 }
@@ -193,13 +196,15 @@ header nav .signup {
 
 .row .inner-box {
   background-color: #fff;
-  width: 22rem;
-  box-shadow: 1px 2px #aaaa;
   padding: 2rem;
-  margin: 3rem 6rem 9rem;
 }
 .row .inner-image {
-  margin: 2rem 0 0px 5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.row .inner-image img {
+  width: 50%;
 }
 
 .row .inner-box h1 {
@@ -212,13 +217,22 @@ courses
   margin: 2rem 0;
 }
 .title h2 {
+  font-weight: 700;
+  font-size: 3.2rem;
   margin: 0rem 0 1rem 0;
 }
+.title p {
+  margin-top: 0.8rem;
+
+  max-width: 80rem;
+}
+
 .courses ul li {
   margin-right: 0.4rem;
 }
 .courses ul li a {
-  font-size: .7rem;
+  font-weight: 400;
+  font-size: 1rem;
   color: #6a6f73;
 }
 .courses ul li a span {
@@ -230,15 +244,16 @@ courses
   padding: 1rem;
 }
 .courses-explore h3 {
+  font-size: 1.7rem;
   padding: 1rem 0;
 }
 .courses-explore p {
-  max-width: 40rem;
+  line-height: 1.4rem;
+  max-width: 42rem;
   overflow: hidden;
   font-size: 0.8rem;
 }
 .courses-explore .course {
-  width: 20%;
   padding: 0.3rem;
   margin: 1rem 0;
   font-family: sans-serif;
@@ -278,11 +293,102 @@ courses
   color: #000;
   font-weight: 800;
 }
-@media (min-width: 1200px) {
+/* 
+
+@media (max-width: 885px) {
+} */
+
+@media (max-width: 1081px) {
+  nav .bussiness {
+    display: none;
+  }
+}
+@media (max-width: 920px) {
+  nav .teach {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav .list {
+    display: none;
+  }
+  nav .category,
+  nav .search-bar {
+    display: none;
+  }
+  nav .logo {
+    margin-left: auto;
+  }
+  .tab {
+    display: none;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 768px) {
+  .row-reverse {
+    flex-direction: column-reverse;
+  }
+  .row .inner-box {
+    max-width: none;
+    box-shadow: none;
+    margin: 0;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
   .container {
-    max-width: 1200px;
+    max-width: 100%;
+  }
+  .course {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .btn-menu {
+    display: none;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .course {
+    width: 50%;
   }
   .col-md-6 {
-    width: 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .row .inner-box {
+    max-width: 22rem;
+
+    box-shadow: 1px 2px #aaaa;
+    margin: 3rem 1rem 4rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 1300px;
+  }
+  .course {
+    width: 33.3333%;
+  }
+  .row .inner-box {
+    margin: 3rem 6rem 9rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .course {
+    width: 25%;
+  }
+  .container {
+    max-width: 1140px;
   }
 }

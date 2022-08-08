@@ -29,8 +29,13 @@
           </div>
           <button class="remove-text">x</button>
         </div>
-        <nav>
-          <a href="/index.html">
+        <nav class="row">
+          <div class="btn-menu">
+            <span>
+              <i class="fa-solid fa-bars"></i>
+            </span>
+          </div>
+          <a href="/index.html" class="logo">
             <img src="./images/logo-udemy.svg" alt="udemy logo" />
           </a>
           <a href="/" class="category"> Categories </a>
@@ -43,28 +48,26 @@
               </button>
             </form>
           </div>
-          <ul class="">
-            <li><a href="/" class="category"> Udemy Bussiness </a></li>
-            <li><a href="/" class="category"> Teach on Udemy </a></li>
+          <ul class="list">
+            <li><a href="/" class="bussiness"> Udemy Bussiness </a></li>
+            <li><a href="/" class="teach"> Teach on Udemy </a></li>
             <li>
-              <a href="/" class="category">
+              <a href="/" class="">
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
             </li>
 
-            <li><a href="/" class="category login"> Log in </a></li>
-            <li><a href="/" class="category signup"> Sign up </a></li>
+            <li><a href="/" class="login"> Log in </a></li>
+            <li><a href="/" class="signup"> Sign up </a></li>
             <li>
-              <a href="/" class="category"
-                ><i class="fa-solid fa-globe"></i>
-              </a>
+              <a href="/" class=""><i class="fa-solid fa-globe"></i> </a>
             </li>
           </ul>
         </nav>
       </header>
 
       <section class="container">
-        <div class="row g-background">
+        <div class="row row-reverse g-background">
           <div class="col-md-6">
             <div class="inner-box">
               <h1>New to Udemy? Lucky you</h1>
@@ -91,7 +94,7 @@
             </p>
           </div>
           <div class="courses">
-            <ul>
+            <ul class="row row-wrap tab">
               <li>
                 <a href="/"
                   ><strong><span>Python</span></strong></a
@@ -135,7 +138,7 @@
             <div class="btn-explore">
               <a href="/">Explore Python</a>
             </div>
-            <div class="row">
+            <div class="row row-wrap">
               <div class="course">
                 <div class="card-img">
                   <img src="./images/course1.jpg" width="100%" />
