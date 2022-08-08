@@ -218,7 +218,6 @@ courses
 }
 .title h2 {
   font-weight: 700;
-  font-size: 3.2rem;
   margin: 0rem 0 1rem 0;
 }
 .title p {
@@ -244,7 +243,6 @@ courses
   padding: 1rem;
 }
 .courses-explore h3 {
-  font-size: 1.7rem;
   padding: 1rem 0;
 }
 .courses-explore p {
@@ -258,7 +256,7 @@ courses
   margin: 1rem 0;
   font-family: sans-serif;
 }
-.courses-explore .course .card-title h3 a {
+.courses-explore .course .card-title h4 a {
   color: black;
   font-size: 0.8rem;
 }
