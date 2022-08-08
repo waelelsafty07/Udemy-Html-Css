@@ -7,7 +7,7 @@
     Global
 */
 a {
-  color: #5624d0;
+  color: #3d3c0a;
   text-decoration: none;
   font-family: sans-serif;
 }
@@ -94,14 +94,16 @@ header nav {
   align-items: center;
   display: flex;
   background: #fff;
-  height: 4.2rem;
   padding: 0 2.4rem;
   position: relative;
   z-index: 1010;
 }
-header nav a {
+
+header nav li a {
   color: #3d3c0a;
-  margin: 0rem 0.5rem;
+}
+nav a {
+  margin: 0 0.4rem;
 }
 
 header nav a img {
@@ -122,7 +124,6 @@ header nav .search-bar .search-form {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 2.4rem 0 0;
 }
 header nav .search-bar .search-label {
   display: flex;
@@ -139,8 +140,6 @@ header nav .search-bar .search-label {
 
 header nav .search-bar .search-input {
   background-color: transparent;
-  background-image: none;
-  padding: 0 0 0 0.4rem;
   flex: 1;
   border: 0;
   height: 3.4rem;
@@ -160,12 +159,10 @@ header nav .search-bar .btn {
   border: none;
   cursor: pointer;
   display: inline-flex;
-  justify-content: center;
   user-select: none;
   -webkit-user-select: none;
   vertical-align: bottom;
   white-space: nowrap;
-  height: 4.8rem;
   color: #5c5b5b;
   background-color: transparent;
   min-width: auto;
@@ -174,17 +171,47 @@ header nav .search-bar .btn {
   cursor: not-allowed;
   opacity: 0.5;
 }
+header nav a {
+  align-items: center;
+  display: inline-flex;
+  height: 2.5rem;
+  min-width: auto;
+}
+
 header nav .login {
   color: #000;
-  border: 2px solid #000;
-  padding: 0.5rem 0.3rem;
+  border: 1px solid #1c1d1f;
   font-weight: 900;
+  position: relative;
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+header nav .login:hover,
+header nav .global-icon:hover {
+  background-color: #eee;
+}
+header nav .signup:hover {
+  background-color: #000;
 }
 header nav .signup {
-  background-color: #000;
-  padding: 0.6rem 0.3rem;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.875);
+  color: #fff;
+  border: 1px solid #1c1d1f;
   font-weight: 900;
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0 0.5rem;
+}
+
+header nav .global-icon {
+  color: #000;
+  border: 1px solid #1c1d1f;
+  font-weight: 900;
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0 0.5rem;
 }
 
 /*
@@ -307,6 +334,21 @@ courses
   }
 }
 
+.btn-search-bar,
+.btn-shopping {
+  background-color: transparent;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  display: none;
+  margin: 0.3rem;
+}
+.btn-search-bar i,
+.btn-shopping i {
+  font-size: 1.2rem;
+}
+
 @media only screen and (max-width: 768px) {
   nav .list {
     display: none;
@@ -316,12 +358,17 @@ courses
     display: none;
   }
   nav .logo {
-    margin-left: auto;
+    margin: auto;
   }
   .tab {
     display: none;
   }
+  .btn-search-bar,
+  .btn-shopping {
+    display: block;
+  }
 }
+
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 768px) {
