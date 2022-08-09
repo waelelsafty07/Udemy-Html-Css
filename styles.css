@@ -49,7 +49,6 @@ header {
 header .top-header {
   display: flex;
   position: relative;
-  z-index: 1000;
   background-color: #eceb98;
   color: #3d3c0a;
 }
@@ -96,7 +95,6 @@ header nav {
   display: flex;
   background: #fff;
   position: relative;
-  z-index: 1010;
 }
 
 header nav li a {
@@ -144,10 +142,8 @@ header nav .search-bar .search-input {
   border: 0;
   height: 3.4rem;
   border-radius: 0;
-  -webkit-appearance: none;
   display: block;
   width: 100%;
-  background-image: none;
 }
 header nav .search-bar .search-input:focus {
   outline: none;
@@ -159,10 +155,7 @@ header nav .search-bar .btn {
   border: none;
   cursor: pointer;
   display: inline-flex;
-  user-select: none;
-  -webkit-user-select: none;
   vertical-align: bottom;
-  white-space: nowrap;
   color: #5c5b5b;
   background-color: transparent;
   min-width: auto;
