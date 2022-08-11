@@ -164,8 +164,8 @@ header nav .search-bar .btn {
   cursor: not-allowed;
   opacity: 0.5;
 }
-header nav li a,header nav li button  {
-  
+header nav li a,
+header nav li button {
   align-items: center;
   display: inline-flex;
   height: 2.5rem;
@@ -281,13 +281,16 @@ courses
   margin: 1rem 0;
   font-family: sans-serif;
 }
+.courses-explore .course .card-img .img {
+  width: 100%;
+}
 .courses-explore .course .card-title h4 a {
   color: black;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
-.courses-explore .course .card-title-xs p {
+.courses-explore .course .card-author-xs p {
   color: #6a6f73;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
 }
 .courses-explore .course div {
   margin: 0.1rem 0;
