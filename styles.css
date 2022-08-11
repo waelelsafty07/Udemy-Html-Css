@@ -72,7 +72,7 @@ header .top-header .bar .presentation {
   display: block;
 }
 
-header .top-header .remove-text {
+header .top-header .btn-close {
   color: #3d3c0a;
   margin: 1rem 1.2rem 0 0;
   background: 0 0;
@@ -164,7 +164,8 @@ header nav .search-bar .btn {
   cursor: not-allowed;
   opacity: 0.5;
 }
-header nav a {
+header nav li a,header nav li button  {
+  
   align-items: center;
   display: inline-flex;
   height: 2.5rem;
@@ -199,6 +200,7 @@ header nav .signup {
 
 header nav .global-icon {
   color: #000;
+  background: none;
   border: 1px solid #1c1d1f;
   font-weight: 900;
   position: relative;
@@ -327,10 +329,6 @@ courses
   color: #000;
   font-weight: 800;
 }
-/* 
-
-@media (max-width: 885px) {
-} */
 
 @media (max-width: 1081px) {
   nav .bussiness {
