@@ -5,7 +5,6 @@ export const ratingStar = (rating, students) => {
   div.classList.add("card-rating");
   const mins = totalStar - rating;
   const floatnum = (mins % 1).toFixed(4);
-  console.log(floatnum);
   const totalStarUnFill = parseInt((mins / 10) * 10);
   //   console.log(totalStarUnFill);
   //   console.log(mins);

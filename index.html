@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Udemy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css" />
     <script
       src="https://kit.fontawesome.com/4b9cd3dbd3.js"
@@ -29,7 +30,7 @@
           </div>
           <button class="btn-close">x</button>
         </div>
-        <nav class="row">
+        <nav class="row-search" id="scroll">
           <div class="btn-menu">
             <span>
               <i class="fa-solid fa-bars"></i>
@@ -75,7 +76,7 @@
       </header>
 
       <section class="container">
-        <div class="row row-reverse g-background">
+        <div class="row-search row-reverse g-background">
           <div class="col-md-6">
             <div class="inner-box">
               <h1>New to Udemy? Lucky you</h1>
@@ -102,31 +103,7 @@
             </p>
           </div>
           <div class="courses">
-            <ul class="row row-wrap tab">
-              <li>
-                <a href="/"
-                  ><strong><span>Python</span></strong></a
-                >
-              </li>
-              <li>
-                <a href="/"><strong>Excel</strong></a>
-              </li>
-              <li>
-                <a href="/"><strong>Web Development</strong></a>
-              </li>
-
-              <li>
-                <a href="/"><strong>JavaScript</strong></a>
-              </li>
-              <li>
-                <a href="/"><strong>Data Science</strong></a>
-              </li>
-              <li>
-                <a href="/"><strong>AWS Certification</strong></a>
-              </li>
-              <li>
-                <a href="/"><strong>Drawing</strong></a>
-              </li>
+            <ul class="row-search row-wrap tab" id="myTab" role="tablist">
             </ul>
           </div>
           <div class="courses-explore">
@@ -146,12 +123,13 @@
             <div class="btn-explore">
               <a href="/">Explore Python</a>
             </div>
-            <div class="row row-wrap" id="all-courses">
+            <div class="row row-wrap tab-content" id="myTabContent">
             </div>
           </div>
         </div>
       </section>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="./index.js" type="module"></script>
   </body>
 </html>

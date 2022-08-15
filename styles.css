@@ -3,6 +3,9 @@
   padding: 0;
   margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 /*
     Global
 */
@@ -21,7 +24,7 @@ a:hover {
   margin-right: auto;
   margin-left: auto;
 }
-.row {
+.row-search {
   display: flex;
 
   margin: 0.2rem 0 0 0;
@@ -164,6 +167,9 @@ header nav .search-bar .btn {
   cursor: not-allowed;
   opacity: 0.5;
 }
+header nav .search-bar .btn:hover {
+  opacity: 1;
+}
 header nav li a,
 header nav li button {
   align-items: center;
@@ -216,21 +222,21 @@ header nav .global-icon {
   width: 100%;
 }
 
-.row .inner-box {
+.row-search .inner-box {
   background-color: #fff;
   padding: 2rem;
 }
-.row .inner-image {
+.row-search .inner-image {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
 }
-.row .inner-image img {
+.row-search .inner-image img {
   width: 50%;
 }
 
-.row .inner-box h1 {
-  font-size: 1.8rem;
+.row-search .inner-box h1 {
+  font-size: 1.5rem;
 }
 /*
 courses
@@ -255,9 +261,18 @@ courses
   font-weight: 400;
   font-size: 1rem;
   color: #6a6f73;
+  cursor: pointer;
+  font-weight: bold;
 }
 .courses ul li a:hover {
   color: #000;
+}
+.courses .active {
+  color: #000;
+  font-weight: bold;
+}
+.tab-content .active {
+  display: contents;
 }
 .courses ul li a span {
   color: #000;
@@ -385,7 +400,7 @@ courses
   .row-reverse {
     flex-direction: column-reverse;
   }
-  .row .inner-box {
+  .row-search .inner-box {
     max-width: none;
     box-shadow: none;
     margin: 0;
@@ -417,7 +432,7 @@ courses
     flex: 0 0 50%;
     max-width: 50%;
   }
-  .row .inner-box {
+  .row-search .inner-box {
     max-width: 22rem;
 
     box-shadow: 1px 2px #aaaa;
@@ -433,7 +448,7 @@ courses
   .course {
     width: 33.3333%;
   }
-  .row .inner-box {
+  .row-search .inner-box {
     margin: 3rem 6rem 9rem;
   }
 }
@@ -446,4 +461,13 @@ courses
   .container {
     max-width: 1140px;
   }
+}
+
+.scroll {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all 0.3s ease;
+  margin: 0;
+  background-color: rgb(201, 199, 199);
 }

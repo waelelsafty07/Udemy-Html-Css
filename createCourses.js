@@ -1,6 +1,6 @@
 import { ratingStar } from "./ratingStar.js";
 // get element to append courses inside it
-const courses = document.querySelector("#all-courses");
+const courses = document.querySelector("#myTabContent");
 export const createCourse = ({
   image,
   title,
@@ -72,5 +72,5 @@ export const createCourse = ({
   priceSell.appendChild(span);
   newDiv.appendChild(priceSell);
 
-  courses.appendChild(newDiv);
+  return newDiv;
 };
