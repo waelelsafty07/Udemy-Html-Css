@@ -14,8 +14,11 @@ a {
   text-decoration: none;
   font-family: sans-serif;
 }
-a:hover {
+header nav a:hover {
   color: #5624d0;
+}
+.Grid-udemy a:hover {
+  color: #000;
 }
 .container {
   width: 100%;
@@ -271,9 +274,7 @@ courses
   color: #000;
   font-weight: bold;
 }
-.tab-content .active {
-  display: contents;
-}
+
 .courses ul li a span {
   color: #000;
 }
@@ -295,6 +296,7 @@ courses
   padding: 0.3rem;
   margin: 1rem 0;
   font-family: sans-serif;
+  display: inline-block;
 }
 .courses-explore .course .card-img .img {
   width: 100%;
@@ -469,5 +471,24 @@ courses
   top: 0;
   transition: all 0.3s ease;
   margin: 0;
+  z-index: 99999;
   background-color: rgb(201, 199, 199);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 40px;
+  height: 40px;
+  top: 25%;
+  background-color: #000;
+  opacity: 1;
+  border-radius: 100%;
+}
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  opacity: 0.7;
+}
+
+.carousel-item.active {
+  display: flex;
 }
