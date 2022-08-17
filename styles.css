@@ -171,7 +171,8 @@ header nav .search-bar .btn {
   opacity: 0.5;
 }
 header nav .search-bar .btn:hover {
-  opacity: 1;
+
+  color: #000;
 }
 header nav li a,
 header nav li button {

@@ -8,6 +8,9 @@ export const search = () => {
     const inputSearchValue = inputSearch.value;
     if (inputSearchValue !== "") {
       buttonSearch.style.cursor = "pointer";
+
+      buttonSearch.style.opacity = 1;
+
     } else {
       buttonSearch.style.cursor = "not-allowed";
       buttonSearch.style.opacity = 0.5;
