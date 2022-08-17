@@ -3,6 +3,9 @@
   padding: 0;
   margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 /*
     Global
 */
@@ -11,8 +14,11 @@ a {
   text-decoration: none;
   font-family: sans-serif;
 }
-a:hover {
+header nav a:hover {
   color: #5624d0;
+}
+.Grid-udemy a:hover {
+  color: #000;
 }
 .container {
   width: 100%;
@@ -21,7 +27,7 @@ a:hover {
   margin-right: auto;
   margin-left: auto;
 }
-.row {
+.row-search {
   display: flex;
 
   margin: 0.2rem 0 0 0;
@@ -72,7 +78,7 @@ header .top-header .bar .presentation {
   display: block;
 }
 
-header .top-header .remove-text {
+header .top-header .btn-close {
   color: #3d3c0a;
   margin: 1rem 1.2rem 0 0;
   background: 0 0;
@@ -164,7 +170,11 @@ header nav .search-bar .btn {
   cursor: not-allowed;
   opacity: 0.5;
 }
-header nav a {
+header nav .search-bar .btn:hover {
+  color: #000;
+}
+header nav li a,
+header nav li button {
   align-items: center;
   display: inline-flex;
   height: 2.5rem;
@@ -199,6 +209,7 @@ header nav .signup {
 
 header nav .global-icon {
   color: #000;
+  background: none;
   border: 1px solid #1c1d1f;
   font-weight: 900;
   position: relative;
@@ -214,21 +225,21 @@ header nav .global-icon {
   width: 100%;
 }
 
-.row .inner-box {
+.row-search .inner-box {
   background-color: #fff;
   padding: 2rem;
 }
-.row .inner-image {
+.row-search .inner-image {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
 }
-.row .inner-image img {
+.row-search .inner-image img {
   width: 50%;
 }
 
-.row .inner-box h1 {
-  font-size: 1.8rem;
+.row-search .inner-box h1 {
+  font-size: 1.5rem;
 }
 /*
 courses
@@ -253,10 +264,17 @@ courses
   font-weight: 400;
   font-size: 1rem;
   color: #6a6f73;
+  cursor: pointer;
+  font-weight: bold;
 }
 .courses ul li a:hover {
   color: #000;
 }
+.courses .active {
+  color: #000;
+  font-weight: bold;
+}
+
 .courses ul li a span {
   color: #000;
 }
@@ -278,14 +296,18 @@ courses
   padding: 0.3rem;
   margin: 1rem 0;
   font-family: sans-serif;
+  display: inline-block;
+}
+.courses-explore .course .card-img .img {
+  width: 100%;
 }
 .courses-explore .course .card-title h4 a {
   color: black;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
-.courses-explore .course .card-title-xs p {
+.courses-explore .course .card-author-xs p {
   color: #6a6f73;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
 }
 .courses-explore .course div {
   margin: 0.1rem 0;
@@ -327,10 +349,6 @@ courses
   color: #000;
   font-weight: 800;
 }
-/* 
-
-@media (max-width: 885px) {
-} */
 
 @media (max-width: 1081px) {
   nav .bussiness {
@@ -384,7 +402,7 @@ courses
   .row-reverse {
     flex-direction: column-reverse;
   }
-  .row .inner-box {
+  .row-search .inner-box {
     max-width: none;
     box-shadow: none;
     margin: 0;
@@ -416,7 +434,7 @@ courses
     flex: 0 0 50%;
     max-width: 50%;
   }
-  .row .inner-box {
+  .row-search .inner-box {
     max-width: 22rem;
 
     box-shadow: 1px 2px #aaaa;
@@ -432,7 +450,7 @@ courses
   .course {
     width: 33.3333%;
   }
-  .row .inner-box {
+  .row-search .inner-box {
     margin: 3rem 6rem 9rem;
   }
 }
@@ -445,4 +463,32 @@ courses
   .container {
     max-width: 1140px;
   }
+}
+
+.scroll {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all 0.3s ease;
+  margin: 0;
+  z-index: 99999;
+  background-color: rgb(201, 199, 199);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 40px;
+  height: 40px;
+  top: 25%;
+  background-color: #000;
+  opacity: 1;
+  border-radius: 100%;
+}
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  opacity: 0.7;
+}
+
+.carousel-item.active {
+  display: flex;
 }
