@@ -1,6 +1,7 @@
 import { createCourse } from "./createCourses.js";
 import { search } from "./search.js";
 import { createTab } from "./createTab.js";
+import createCarousel from "./createCarousel.js";
 
 // scrollNav();
 // function fetch data from api
@@ -19,14 +20,12 @@ const CoursesGrid = (allCoursesArray) => {
   return CourseGrid;
 };
 
-// get element to append courses inside it
-const courses = document.querySelector("#myTabContent");
-if (courses) {
+const myTabContent = document.querySelector("#myTabContent");
+const main = async () => {
   const myTabData = await fetchData();
-  const myTabDataArray = Array.from(myTabData);
   let i = 0;
-  let j = 0;
-  myTabDataArray.forEach((item) => {
+  myTabData.forEach((item) => {
+    let j = 0;
     const { tab, a } = createTab(item);
     if (i === 0) {
       i++;
@@ -34,28 +33,28 @@ if (courses) {
       tab.classList.add("active");
       a.classList.add("active");
     }
-    courses.appendChild(tab);
-
+    const { mainDiv, carouselInner } = createCarousel(item);
     const CoursesGridData = CoursesGrid(item.courses);
     CoursesGridData.forEach((course) => {
-      const carousal = document.createElement("div");
-      carousal.classList.add("carousel-item");
+      const { carouselItem } = createCarousel(item);
       if (j == 0) {
-        carousal.classList.add("active");
+        carouselItem.classList.add("active");
         j++;
       }
       course.forEach((el) => {
         const courseDiv = createCourse(el);
-
-        carousal.appendChild(courseDiv);
+        carouselItem.appendChild(courseDiv);
       });
-      tab.appendChild(carousal);
+      carouselInner.appendChild(carouselItem);
     });
+    mainDiv.appendChild(carouselInner);
+    tab.appendChild(mainDiv);
+    myTabContent.appendChild(tab);
+
+    // console.log(element);
   });
-
-  search();
-}
-
+};
+main();
 const myCarouselElement = document.querySelector("#myTabContent");
 const carousel = new bootstrap.Carousel(myCarouselElement, {
   interval: 50000,
