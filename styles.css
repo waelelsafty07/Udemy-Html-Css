@@ -180,7 +180,9 @@ header nav li button {
   height: 2.5rem;
   min-width: auto;
 }
-
+header nav .search-bar .btn:hover {
+  color: #000;
+}
 header nav .login {
   color: #000;
   border: 1px solid #1c1d1f;

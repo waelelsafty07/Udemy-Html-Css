@@ -53,8 +53,46 @@ const main = async () => {
 
     // console.log(element);
   });
+  search();
 };
 main();
+// get element to append courses inside it
+// const courses = document.querySelector("#myTabContent");
+// if (courses) {
+//   const myTabData = await fetchData();
+//   const myTabDataArray = Array.from(myTabData);
+//   let i = 0;
+//   myTabDataArray.forEach((item) => {
+//     let j = 0;
+//     const { tab, a } = createTab(item);
+//     if (i === 0) {
+//       i++;
+//       tab.classList.add("show");
+//       tab.classList.add("active");
+//       a.classList.add("active");
+//     }
+//     courses.appendChild(tab);
+
+//     const CoursesGridData = CoursesGrid(item.courses);
+//     CoursesGridData.forEach((course) => {
+//       const carousal = document.createElement("div");
+//       carousal.classList.add("carousel-item");
+//       if (j == 0) {
+//         carousal.classList.add("active");
+//         j++;
+//       }
+//       course.forEach((el) => {
+//         const courseDiv = createCourse(el);
+
+//         carousal.appendChild(courseDiv);
+//       });
+//       tab.appendChild(carousal);
+//     });
+//   });
+
+//
+// }
+
 const myCarouselElement = document.querySelector("#myTabContent");
 const carousel = new bootstrap.Carousel(myCarouselElement, {
   interval: 50000,
