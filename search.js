@@ -7,11 +7,9 @@ export const search = () => {
   inputSearch.addEventListener("keyup", () => {
     const inputSearchValue = inputSearch.value;
     if (inputSearchValue !== "") {
-      labelSearch.style.display = "none";
       buttonSearch.style.cursor = "pointer";
       buttonSearch.style.opacity = 1;
     } else {
-      labelSearch.style.display = "flex";
       buttonSearch.style.cursor = "not-allowed";
       buttonSearch.style.opacity = 0.5;
     }
