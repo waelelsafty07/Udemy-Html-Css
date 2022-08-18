@@ -1,24 +1,16 @@
 export const ratingStar = (rating, students) => {
-  const totalStar = 5;
-  const totalStarFill = parseInt((rating / 10) * 10);
+  let totalStar = rating * 10;
+  const stars = ["fa-star", "fa-star-half-o", "fa-star-o"];
   const div = document.createElement("div");
   div.classList.add("card-rating");
-  const mins = totalStar - rating;
-  const floatnum = (mins % 1).toFixed(4);
-
-  const totalStarUnFill = parseInt((mins / 10) * 10);
   const spanStar = document.createElement("span");
-  const spanPrice = document.createTextNode(rating);
-  spanStar.appendChild(spanPrice);
+  const spanRating = document.createTextNode(rating);
+  spanStar.appendChild(spanRating);
   div.appendChild(spanStar);
-  for (let i = 1; i <= totalStarFill; i++) {
-    createStar("fa-star", div);
-  }
-  if (floatnum > 0 && floatnum < 1) {
-    createStar("fa-star-half-o", div);
-  }
-  for (let i = 1; i <= totalStarUnFill; i++) {
-    createStar("fa-star-o", div);
+  for (let i = 0; i < 5; i++) {
+    let index = totalStar > 8 ? 0 : totalStar > 2 ? 1 : 2;
+    createStar(stars[index], div);
+    totalStar -= 10;
   }
   const spanStudents = document.createElement("span");
   const spanContent = document.createTextNode(students);
