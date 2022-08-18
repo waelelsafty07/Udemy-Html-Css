@@ -2,8 +2,6 @@ import { createCourse } from "./createCourses.js";
 import { search } from "./search.js";
 import { createTab } from "./createTab.js";
 import createCarousel from "./createCarousel.js";
-
-// scrollNav();
 // function fetch data from api
 const fetchData = async () => {
   const response = await fetch(`http://localhost:3000/tabs`);
@@ -22,10 +20,12 @@ const CoursesGrid = (allCoursesArray) => {
 
 const myTabContent = document.querySelector("#myTabContent");
 const main = async () => {
+  // fetch api
   const myTabData = await fetchData();
   let i = 0;
   myTabData.forEach((item) => {
     let j = 0;
+    // create tabs
     const { tab, a } = createTab(item);
     if (i === 0) {
       i++;
@@ -50,51 +50,7 @@ const main = async () => {
     mainDiv.appendChild(carouselInner);
     tab.appendChild(mainDiv);
     myTabContent.appendChild(tab);
-
-    // console.log(element);
   });
   search();
 };
 main();
-// get element to append courses inside it
-// const courses = document.querySelector("#myTabContent");
-// if (courses) {
-//   const myTabData = await fetchData();
-//   const myTabDataArray = Array.from(myTabData);
-//   let i = 0;
-//   myTabDataArray.forEach((item) => {
-//     let j = 0;
-//     const { tab, a } = createTab(item);
-//     if (i === 0) {
-//       i++;
-//       tab.classList.add("show");
-//       tab.classList.add("active");
-//       a.classList.add("active");
-//     }
-//     courses.appendChild(tab);
-
-//     const CoursesGridData = CoursesGrid(item.courses);
-//     CoursesGridData.forEach((course) => {
-//       const carousal = document.createElement("div");
-//       carousal.classList.add("carousel-item");
-//       if (j == 0) {
-//         carousal.classList.add("active");
-//         j++;
-//       }
-//       course.forEach((el) => {
-//         const courseDiv = createCourse(el);
-
-//         carousal.appendChild(courseDiv);
-//       });
-//       tab.appendChild(carousal);
-//     });
-//   });
-
-//
-// }
-
-const myCarouselElement = document.querySelector("#myTabContent");
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-  interval: 50000,
-  wrap: false,
-});

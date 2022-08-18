@@ -1,9 +1,10 @@
-
 const createCarousel = (item) => {
   const mainDiv = document.createElement("div");
   mainDiv.id = item.slug + 1;
   mainDiv.classList = "carousel slide";
-  mainDiv.setAttribute("data-bs-ride", "carousel");
+  // mainDiv.setAttribute("data-bs-ride", "carousel");
+  mainDiv.setAttribute("data-bs-interval", "false");
+  mainDiv.setAttribute("data-pause", "hover");
   const carouselInner = document.createElement("div");
   carouselInner.classList = "carousel-inner";
   const carouselItem = document.createElement("div");
