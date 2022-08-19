@@ -1,19 +1,24 @@
-const createCarousel = (item) => {
+export const mainDiv = (item) => {
   const mainDiv = document.createElement("div");
   mainDiv.id = item.slug + 1;
   mainDiv.classList = "carousel slide";
-  // mainDiv.setAttribute("data-bs-ride", "carousel");
   mainDiv.setAttribute("data-bs-interval", "false");
   mainDiv.setAttribute("data-pause", "hover");
-  const carouselInner = document.createElement("div");
-  carouselInner.classList = "carousel-inner";
-  const carouselItem = document.createElement("div");
-  carouselItem.classList = "carousel-item";
   const prev = createButton("prev", `#${mainDiv.id}`);
   const next = createButton("next", `#${mainDiv.id}`);
   mainDiv.appendChild(prev);
   mainDiv.appendChild(next);
-  return { mainDiv, carouselInner, carouselItem };
+  return mainDiv;
+};
+export const createInner = () => {
+  const carouselInner = document.createElement("div");
+  carouselInner.classList = "carousel-inner";
+  return carouselInner;
+};
+export const createItem = () => {
+  const carouselItem = document.createElement("div");
+  carouselItem.classList = "carousel-item";
+  return carouselItem;
 };
 const createButton = (type, id) => {
   const button = document.createElement("button");
@@ -32,4 +37,3 @@ const createButton = (type, id) => {
   button.appendChild(span);
   return button;
 };
-export default createCarousel;

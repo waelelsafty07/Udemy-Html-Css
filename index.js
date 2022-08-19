@@ -1,7 +1,7 @@
 import { createCourse } from "./createCourses.js";
 import { search } from "./search.js";
 import { createTab } from "./createTab.js";
-import createCarousel from "./createCarousel.js";
+import { mainDiv, createInner, createItem } from "./createCarousel.js";
 // function fetch data from api
 const fetchData = async () => {
   const response = await fetch(`http://localhost:3000/tabs`);
@@ -22,33 +22,31 @@ const myTabContent = document.querySelector("#myTabContent");
 const main = async () => {
   // fetch api
   const myTabData = await fetchData();
-  let i = 0;
-  myTabData.forEach((item) => {
-    let j = 0;
+  myTabData.forEach((item, index1) => {
     // create tabs
     const { tab, a } = createTab(item);
-    if (i === 0) {
-      i++;
+    if (index1 === 0) {
       tab.classList.add("show");
       tab.classList.add("active");
       a.classList.add("active");
     }
-    const { mainDiv, carouselInner } = createCarousel(item);
-    const CoursesGridData = CoursesGrid(item.courses);
-    CoursesGridData.forEach((course) => {
-      const { carouselItem } = createCarousel(item);
-      if (j == 0) {
+    const mainDivcar = mainDiv(item);
+    const carouselInner = createInner();
+    let carouselItem = createItem();
+    item.courses.forEach((item, index) => {
+      const courseDiv = createCourse(item);
+      if (index == 0) {
         carouselItem.classList.add("active");
-        j++;
       }
-      course.forEach((el) => {
-        const courseDiv = createCourse(el);
+      if (index % 5 == 0 && index > 0) {
         carouselItem.appendChild(courseDiv);
-      });
+        carouselItem = createItem();
+      }
+      carouselItem.appendChild(courseDiv);
       carouselInner.appendChild(carouselItem);
     });
-    mainDiv.appendChild(carouselInner);
-    tab.appendChild(mainDiv);
+    mainDivcar.appendChild(carouselInner);
+    tab.appendChild(mainDivcar);
     myTabContent.appendChild(tab);
   });
   search();
